@@ -1,4 +1,4 @@
-import useUsers from "@/pages/hooks/useUsers";
+import useUsers from "@/hooks/useUsers";
 import Avatar from "../Avatar";
 
 const FollowBar = () => {

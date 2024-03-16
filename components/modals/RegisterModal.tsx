@@ -3,8 +3,8 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { signIn } from "next-auth/react";
 
-import useRegisterModal from "@/pages/hooks/useRegisterModal";
-import useLoginModal from "@/pages/hooks/useLoginModal";
+import useRegisterModal from "@/hooks/useRegisterModal";
+import useLoginModal from "@/hooks/useLoginModal";
 
 import Input from "../Input";
 import Modal from "../Modal";

@@ -1,7 +1,7 @@
 import { ClipLoader } from "react-spinners";
 import { useRouter } from "next/router";
 
-import useUser from "../hooks/useUser";
+import useUser from "../../hooks/useUser";
 import Header from "@/components/layout/Header";
 import UsersHero from "@/components/users/UsersHero";
 import UserBio from "@/components/users/UserBio";

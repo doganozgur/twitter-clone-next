@@ -6,7 +6,7 @@ import { signOut } from "next-auth/react";
 import SidebarLogo from "./SidebarLogo";
 import SidebarItem from "./SidebarItem";
 import SidebarTweetButton from "./SidebarTweetButton";
-import useCurrentUser from "@/pages/hooks/useCurrentUser";
+import useCurrentUser from "@/hooks/useCurrentUser";
 
 const Sidebar = () => {
   const { data: currentUser } = useCurrentUser();
@@ -25,7 +25,7 @@ const Sidebar = () => {
     },
     {
       label: "Profile",
-      href: "/users/123",
+      href: `/users/${currentUser?.id}`,
       icon: FaUser,
       auth: true,
     },
