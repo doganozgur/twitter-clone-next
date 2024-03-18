@@ -76,7 +76,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
           </h1>
           <div className="flex flex-row items-center justify-center gap-4">
             <Button label="Login" onClick={loginModal.onOpen} />
-            <Button label="Register" onClick={loginModal.onOpen} secondary />
+            <Button label="Register" onClick={registerModal.onOpen} secondary />
           </div>
         </div>
       )}

@@ -78,6 +78,7 @@ const RegisterModal = () => {
         disabled={isLoading}
       />
       <Input
+        type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}

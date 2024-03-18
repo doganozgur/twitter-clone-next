@@ -6,6 +6,7 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 import useUser from "@/hooks/useUser";
 import useEditModal from "@/hooks/useEditModal";
 import Button from "../Button";
+import useFollow from "@/hooks/useFollow";
 
 interface UserBioProps {
   userId: string;
@@ -14,6 +15,8 @@ interface UserBioProps {
 const UserBio: React.FC<UserBioProps> = ({ userId }) => {
   const { data: fetchedUser } = useUser(userId);
   const { data: currentUser } = useCurrentUser();
+
+  const { toggleFollow, isFollowing } = useFollow(userId);
 
   const editModal = useEditModal();
 
@@ -30,7 +33,12 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
         {currentUser?.id === userId ? (
           <Button secondary label="Edit" onClick={editModal.onOpen} />
         ) : (
-          <Button secondary label="Follow" onClick={() => {}} />
+          <Button
+            label={isFollowing ? "Unfollow" : "Follow"}
+            onClick={toggleFollow}
+            secondary={!isFollowing}
+            outline={isFollowing}
+          />
         )}
       </div>
       <div className="mt-8 px-4">
@@ -53,7 +61,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
             <p className="text-neutral-500">Following</p>
           </div>
           <div className="flex flex-row items-center gap-1">
-            <p className="text-white">{fetchedUser?.followersCount || 0}</p>
+            <p className="text-white">{fetchedUser?.followers || 0}</p>
             <p className="text-neutral-500">Followers</p>
           </div>
         </div>
