@@ -6,11 +6,10 @@ import Avatar from "../Avatar";
 import { AiOutlineHeart, AiOutlineMessage } from "react-icons/ai";
 
 interface PostItemProps {
-  userId: string;
   data: Record<string, any>;
 }
 
-const PostItem: React.FC<PostItemProps> = ({ userId, data }) => {
+const PostItem: React.FC<PostItemProps> = ({ data }) => {
   const router = useRouter();
   const loginModal = useLoginModal();
 
